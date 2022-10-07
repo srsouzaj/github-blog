@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: center;
 
-  svg {
+  img {
     margin-bottom: 5rem;
   }
 `;

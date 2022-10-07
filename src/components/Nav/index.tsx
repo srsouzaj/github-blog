@@ -1,9 +1,11 @@
 import { HeaderContainer } from "./styles";
-import logoSrc from "../../assets/logo.svg";
-import Logo from "../../assets/logo/Logo.icon";
+import LogoSrc from "../../assets/logo.png";
 
 export function Header() {
   return (
-    <HeaderContainer />
+    <HeaderContainer>
+      <img src={LogoSrc} alt="" />
+      
+    </HeaderContainer>
   );
 }

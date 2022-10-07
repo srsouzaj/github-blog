@@ -1,11 +1,10 @@
 import Logo from "../../assets/logo/Logo.icon"
+import { ProfileSection } from "./components/Profile";
 
 export const BlogScreen = () => {
     return (
-      <div>
-        <Logo />
-
-        <h1>Jorge de Souza</h1>
-      </div>
+      <>
+        <ProfileSection />
+      </>
     );
 }

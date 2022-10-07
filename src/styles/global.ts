@@ -3,7 +3,7 @@ import firaCode from "../assets/fonts/FiraCode-Regular.woff";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
-    font-family: 'Nunito', "sans-serif";
+    font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-style: normal;
   }

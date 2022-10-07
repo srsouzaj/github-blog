@@ -1,13 +1,11 @@
-import Logo from "./assets/logo/Logo.icon"
-
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router";
 function App() {
-
   return (
-<div>
-  <Logo />
-
-  <h1>Jorge de Souza has here</h1>
-   </div>  )
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

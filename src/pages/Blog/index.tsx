@@ -1,5 +1,5 @@
 import Logo from "../../assets/logo/Logo.icon"
-import { Post } from "./components/Post";
+import { Post } from "./components/PostCardList";
 import { ProfileSection } from "./components/Profile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./components/styles";

@@ -1,5 +1,5 @@
 import { HeaderContainer } from "./styles";
-import LogoSrc from "../../assets/logo.png";
+import LogoSrc from "../../assets/Logo.png";
 
 export function Header() {
   return (

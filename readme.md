@@ -1,6 +1,6 @@
 
 <h1 align="center">
-<img src="https://i.ibb.co/C9YGJJZ/Logo.png" width="100px" alt="">
+<img src="https://i.ibb.co/C9YGJJZ/Logo.png" width="150px" alt="">
 </h1>
 
 # Desafio Ignite: GitHub Blog

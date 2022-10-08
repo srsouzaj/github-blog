@@ -6,6 +6,7 @@ export const PostContentContainer = styled.section`
   gap: 1rem;
   padding: 2.5rem 2rem;
   margin-bottom: 8rem;
+  
   img {
     width: 100%;
   }
@@ -14,10 +15,12 @@ export const PostContentContainer = styled.section`
   h3 {
     color: ${({ theme }) => theme.colors["brand-blue"]};
   }
+
   ul {
     list-style: inherit;
     padding-left: 1.5rem;
   }
+
   pre {
     background: ${({ theme }) => theme.colors["base-post"]};
     padding: 1rem;
@@ -28,6 +31,11 @@ export const PostContentContainer = styled.section`
       code {
         font-family: "FiraCode", monospace !important;
         line-height: 160% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-line-clamp: 5 !important;
       }
     }
   }

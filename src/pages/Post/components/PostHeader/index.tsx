@@ -10,9 +10,9 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export const PostHeader = () => {
+    const navigate = useNavigate()
 
     const goBack = () => {
-    const navigate = useNavigate()
     navigate(-1)
     }
 

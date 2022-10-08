@@ -1,12 +1,13 @@
 import React from "react";
-import Logo from "../../assets/logo/Logo.icon"
+import Logo from "../../assets/logo/Logo.icon";
 import { api } from "../../services/api/base.api";
 import { PostCard } from "./components/PostCardList";
 import { HeaderProfileSection } from "./components/HeaderProfile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./components/styles";
+import { Spinner } from "../../components/Spinner";
 
-const username = import.meta.env.VITE_GITHUB_USERNAME
+const username = import.meta.env.VITE_GITHUB_USERNAME;
 const repoName = import.meta.env.VITE_GITHUB_REPONAME;
 
 export interface IPost {
@@ -32,7 +33,7 @@ export const BlogScreen = () => {
         const response = await api.get(
           `/search/issues?q=${query}%20label:published%20repo:${username}/${repoName}`
         );
-        
+
         setPosts(response.data.items);
       } finally {
         setIsLoading(false);
@@ -44,15 +45,21 @@ export const BlogScreen = () => {
   React.useEffect(() => {
     getPosts();
   }, []);
-    return (
-      <>
-        <HeaderProfileSection />
-        <SearchInput getPosts={getPosts} postLength={posts.length} />
-        <PostListContainer>
-          {posts.map((post) => (
-            <PostCard key={post.number} post={post} />
-          ))}
-        </PostListContainer>
-      </>
-    );
-}
+  return (
+    <>
+      <HeaderProfileSection />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <SearchInput getPosts={getPosts} postLength={posts.length} />
+          <PostListContainer>
+            {posts.map((post) => (
+              <PostCard key={post.number} post={post} />
+            ))}
+          </PostListContainer>
+        </>
+      )}
+    </>
+  );
+};

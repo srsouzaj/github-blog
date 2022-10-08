@@ -6,24 +6,14 @@ import { HeaderProfileSection } from "./components/HeaderProfile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./components/styles";
 import { Spinner } from "../../components/Spinner";
+import { PostInterface } from "../../models/interfaces/Post.interface";
 
 const username = import.meta.env.VITE_GITHUB_USERNAME;
 const repoName = import.meta.env.VITE_GITHUB_REPONAME;
 
-export interface IPost {
-  title: string;
-  body: string;
-  created_at: string;
-  number: number;
-  html_url: string;
-  comments: number;
-  user: {
-    login: string;
-  };
-}
 
 export const BlogScreen = () => {
-  const [posts, setPosts] = React.useState<IPost[]>([]);
+  const [posts, setPosts] = React.useState<PostInterface[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const getPosts = React.useCallback(
@@ -45,6 +35,7 @@ export const BlogScreen = () => {
   React.useEffect(() => {
     getPosts();
   }, []);
+  
   return (
     <>
       <HeaderProfileSection />

@@ -3,39 +3,11 @@ import { ProfileContainer, ProfileDetails, ProfilePicture } from "./styles"
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
-import { api } from "../../../../services/api/base.api";
 import { Spinner } from "../../../../components/Spinner";
-
-const username = import.meta.env.VITE_GITHUB_USERNAME;
-interface ProfileInterface {
-  name: string;
-  login: string;
-  avatar_url: string;
-  bio: string;
-  html_url: string;
-  company?: string;
-  followers: number;
-}
+import { useGetProfileData } from "../../../../hooks/useGetProfileData";
 
 export const HeaderProfileSection = () => {
-const [profileData, setProfileData] = React.useState<ProfileInterface>({} as ProfileInterface);
-const [isLoading, setIsLoading] = React.useState<boolean>(true)
-
-const getProfileData = React.useCallback(async () => {
-  try {
-    setIsLoading(true);
-    const response = await api.get(`/users/${username}`);
-
-    setProfileData(response.data);
-  } finally {
-    setIsLoading(false);
-  }
-}, [profileData]);
-
-React.useEffect(() => {
-  getProfileData();
-}, []);
+ const { isLoading, profileData} = useGetProfileData()
 
     return (
       <ProfileContainer>

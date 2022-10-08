@@ -1,18 +1,9 @@
 import { SearchInputContainer } from "./styles";
-import * as z from "zod";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-const searchFormSchema = z.object({
-  query: z.string(),
-});
-
-type SearchFormInput = z.infer<typeof searchFormSchema>;
-
-interface SearchInputInterface {
-  getPosts: (query?: string) => Promise<void>;
-  postLength: number;
-}
+import { SearchInputInterface } from "../../../../models/interfaces/SearchInput.interface";
+import { SearchFormInput, searchFormSchema } from "../../../../models/schemas/searchInput.schema";
 
 export const SearchInput = ({ getPosts, postLength }: SearchInputInterface) => {
   const { register, handleSubmit } = useForm<SearchFormInput>({

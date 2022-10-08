@@ -1,13 +1,12 @@
-import { IPost } from "../..";
 import { PostContainer } from "./styles";
 import {relativeDateFormatter} from "../../../../utils/formatter"
+import { PostInterface } from "../../../../models/interfaces/Post.interface";
 
-interface PostProps{
-  post: IPost
+interface PostsInterface {
+  post: PostInterface;
 }
 
-
-export function PostCard({post}: PostProps) {
+export function PostCard({post}: PostsInterface) {
 
   const dateFormmater = relativeDateFormatter(post.created_at)
   

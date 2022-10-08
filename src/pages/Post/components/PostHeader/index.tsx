@@ -8,12 +8,13 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { IPost } from "../../../Blog";
+
 import { relativeDateFormatter } from "../../../../utils/formatter";
 import { Spinner } from "../../../../components/Spinner";
+import { PostInterface } from "../../../../models/interfaces/Post.interface";
 
 interface PostHeaderInterface {
-  postData: IPost;
+  postData: PostInterface;
   isLoading: boolean;
 }
 

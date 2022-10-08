@@ -3,11 +3,11 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-interface PostContentProps {
+interface PostContentInterface {
   content: string;
 }
 
-export function PostContent({ content }: PostContentProps) {
+export function PostContent({ content }: PostContentInterface) {
   return (
     <PostContentContainer>
       <ReactMarkdown

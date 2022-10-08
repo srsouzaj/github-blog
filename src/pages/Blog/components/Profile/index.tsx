@@ -14,10 +14,7 @@ export const ProfileSection = () => {
             <ExternalLink text="Github" href="http://github.com/srsouzaj" />
           </header>
           <p>
-            Formado em Sistema da Informação pela Universidade Santa Cecília.
-            Graduado em Logística pela Etec Paula Souza. Atualmente estou focado em
-            desenvolvimento Front-End com experiência profissional em TS |
-            NextJS e ChakraUI.
+            WEB Developer | ReactJS | TS | Software Engineer at @recrutae
           </p>
           <ul>
             <li>

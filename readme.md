@@ -15,14 +15,6 @@ Você pode ver como ficou a aplicação [clicando aqui](https://github-blog-expl
 <img src="https://i.ibb.co/CVzpQRw/cf28c68d-ad61-45aa-a918-ec028ea75bf6.png" alt="" >
  </p>
 
-
-
-
-
-
-
-
-
 ## Tecnologias utilizadas
 
 * [Vite](https://vitejs.dev/)

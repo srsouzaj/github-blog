@@ -4,7 +4,7 @@ import LogoSrc from "../../assets/Logo.png";
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={LogoSrc} alt="" />
+      <img src={LogoSrc} alt=""/>
       
     </HeaderContainer>
   );

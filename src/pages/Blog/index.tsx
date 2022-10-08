@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../assets/logo/Logo.icon"
 import { api } from "../../services/api/base.api";
 import { PostCard } from "./components/PostCardList";
-import { ProfileSection } from "./components/Profile";
+import { HeaderProfileSection } from "./components/HeaderProfile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./components/styles";
 
@@ -46,12 +46,12 @@ export const BlogScreen = () => {
   }, []);
     return (
       <>
-        <ProfileSection />
-        <SearchInput />
+        <HeaderProfileSection />
+        <SearchInput getPosts={getPosts} postLength={posts.length} />
         <PostListContainer>
-         {posts.map(post => (
-          <PostCard key={post.number} post={post}/>
-         ))}
+          {posts.map((post) => (
+            <PostCard key={post.number} post={post} />
+          ))}
         </PostListContainer>
       </>
     );

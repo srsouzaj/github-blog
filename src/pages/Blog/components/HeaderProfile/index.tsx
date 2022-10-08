@@ -4,7 +4,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
-export const ProfileSection = () => {
+export const HeaderProfileSection = () => {
     return (
       <ProfileContainer>
         <ProfilePicture src="http://github.com/srsouzaj.png" />

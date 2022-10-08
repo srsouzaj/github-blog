@@ -8,42 +8,61 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { IPost } from "../../../Blog";
+import { relativeDateFormatter } from "../../../../utils/formatter";
+import { Spinner } from "../../../../components/Spinner";
 
-export const PostHeader = () => {
-    const navigate = useNavigate()
-
-    const goBack = () => {
-    navigate("/")
-    }
-
-    return (
-      <PostHeaderContainer>
-        <header>
-          <ExternalLink
-            as="button"
-            onClick={goBack}
-            icon={<FontAwesomeIcon icon={faChevronLeft} />}
-            text="Voltar"
-            href="#"
-            variant="iconLeft"
-          />
-          <ExternalLink text="Ver no Github" href="#" target="_blank" />
-        </header>
-
-        <h1>Javascript data types and data structures</h1>
-        <ul>
-          <li>
-            <FontAwesomeIcon icon={faGithub} />
-            srsouzaj
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faCalendar} />
-            há 01 dia(s)
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faComment} />5 comentários
-          </li>
-        </ul>
-      </PostHeaderContainer>
-    );
+interface PostHeaderInterface {
+  postData: IPost;
+  isLoading: boolean;
 }
+
+export const PostHeader = ({ postData, isLoading }: PostHeaderInterface) => {
+  const navigate = useNavigate();
+  const formattedDate = relativeDateFormatter(postData?.created_at);
+
+  const goBack = () => {
+    navigate("/");
+  };
+
+  return (
+    <PostHeaderContainer>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <header>
+            <ExternalLink
+              as="button"
+              onClick={goBack}
+              icon={<FontAwesomeIcon icon={faChevronLeft} />}
+              text="Voltar"
+              variant="iconLeft"
+            />
+            <ExternalLink
+              text="Ver no Github"
+              href={postData.html_url}
+              target="_blank"
+            />
+          </header>
+
+          <h1>{postData.title}</h1>
+          <ul>
+            <li>
+              <FontAwesomeIcon icon={faGithub} />
+              {postData.user ? postData.user.login : "srsouzaj"}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCalendar} />
+              {formattedDate}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faComment} /> {postData.comments || 0}{" "}
+              comentários
+            </li>
+          </ul>
+        </>
+      )}
+    </PostHeaderContainer>
+  );
+};

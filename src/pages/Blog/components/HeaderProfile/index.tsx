@@ -19,22 +19,35 @@ export const HeaderProfileSection = () => {
             <ProfileDetails>
               <header>
                 <h1>{profileData.name}</h1>
-                <ExternalLink text="Github" href={profileData.html_url} />
+                <ExternalLink
+                  text="Github"
+                  href={profileData.html_url}
+                  target="_blank"
+                />
               </header>
               <p>{profileData.bio}</p>
               <ul>
-                <li>
-                  <FontAwesomeIcon icon={faGithub} />
-                  {profileData.login}
-                </li>
+                <a
+                  href={`https://www.github.com/${profileData.login}`}
+                  target="_blank"
+                >
+                  <li>
+                    <FontAwesomeIcon icon={faGithub} />
+                    {profileData.login}
+                  </li>
+                </a>
 
                 {profileData.company && (
-                  <li>
-                    <FontAwesomeIcon icon={faBuilding} />
-                    {profileData.company}
-                  </li>
+                  <a
+                    href={`https://www.github.com/${profileData.company}`}
+                    target="_blank"
+                  >
+                    <li>
+                      <FontAwesomeIcon icon={faBuilding} />
+                      {profileData.company}
+                    </li>
+                  </a>
                 )}
-
                 <li>
                   <FontAwesomeIcon icon={faUserGroup} />
                   {profileData.followers} seguidores

@@ -1,6 +1,7 @@
 
-
-<img src="https://i.ibb.co/C9YGJJZ/Logo.png" alt="" background-position="center" border="0">
+<h1 align="center">
+<img src="https://i.ibb.co/C9YGJJZ/Logo.png" width="100px" alt="">
+</h1>
 
 # Desafio Ignite: GitHub Blog
 Desafio realizado durante o bootcamp "***Ignite - ReactJS***", promovido pela [@rocketseat](https://www.rocketseat.com.br/), onde pude desenvolver uma aplicação para complementar meus aprendizados sobre *consumo de API e performance no ReactJS*.
@@ -10,8 +11,9 @@ Desafio realizado durante o bootcamp "***Ignite - ReactJS***", promovido pela [@
 Você pode ver como ficou a aplicação [clicando aqui](https://github-blog-explorer.vercel.app/).
 
 
-
-<img src="https://i.ibb.co/CVzpQRw/cf28c68d-ad61-45aa-a918-ec028ea75bf6.png" background-position="center" alt="" border="0">
+<p align="center">
+<img src="https://i.ibb.co/CVzpQRw/cf28c68d-ad61-45aa-a918-ec028ea75bf6.png" alt="" >
+ </p>
 
 
 

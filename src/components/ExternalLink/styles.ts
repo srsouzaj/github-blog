@@ -27,10 +27,16 @@ export const ExternalLinkContainer = styled.a<ExternalLinkProps>`
   &:hover {
     border-color: ${({ theme }) => theme.colors["brand-blue"]};
   }
-  
+
   ${({ variant }) =>
     variant === "iconLeft" &&
     css`
       flex-direction: row-reverse;
     `}
+
+  @media (max-width: 520px) {
+    
+      display: none;
+  
+  }
 `;

@@ -13,4 +13,9 @@ export const HeaderContainer = styled.header`
   img {
     margin-bottom: 5rem;
   }
+
+  @media (max-width: 520px) {
+   background-size: 0%;
+   height: 15rem;
+  }
 `;

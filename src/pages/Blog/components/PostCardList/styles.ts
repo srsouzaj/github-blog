@@ -37,6 +37,15 @@ export const PostContainer = styled(Link)`
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
+  }
+
+  @media (max-width: 520px) {
+   width: 91%;
+   padding: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+   width: 85%;
   }
 `;

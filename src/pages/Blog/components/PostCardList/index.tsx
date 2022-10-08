@@ -1,20 +1,23 @@
+import { IPost } from "../..";
 import { PostContainer } from "./styles";
+import {relativeDateFormatter} from "../../../../utils/formatter"
+
+interface PostProps{
+  post: IPost
+}
 
 
-export function Post() {
+export function PostCard({post}: PostProps) {
+
+  const dateFormmater = relativeDateFormatter(post.created_at)
   
   return (
-    <PostContainer to={"/post/1"}>
+    <PostContainer to={`/post/${post.number}`}>
       <div>
-        <strong>Olha isso</strong>
-        <span>Há dois dias</span>
+        <strong>{post.title}</strong>
+        <span>{dateFormmater}</span>
       </div>
-      <p>
-        Formado em Sistema da Informação pela Universidade Santa Cecília.
-        Graduado em Logística pela Etec Paula Souza. Fiz transição de carreira
-        para programação. Atualmente estou focado em desenvolvimento Front-End
-        com experiência profissional em TS | NextJS e ChakraUI.
-      </p>
+      <p>{post.body}</p>
     </PostContainer>
   );
 }

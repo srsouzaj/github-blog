@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo/Logo.icon"
 import { api } from "../../services/api/base.api";
-import { Post } from "./components/PostCardList";
+import { PostCard } from "./components/PostCardList";
 import { ProfileSection } from "./components/Profile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./components/styles";
@@ -32,7 +32,7 @@ export const BlogScreen = () => {
         const response = await api.get(
           `/search/issues?q=${query}%20label:published%20repo:${username}/${repoName}`
         );
-console.log(response.data)
+        
         setPosts(response.data.items);
       } finally {
         setIsLoading(false);
@@ -49,10 +49,9 @@ console.log(response.data)
         <ProfileSection />
         <SearchInput />
         <PostListContainer>
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+         {posts.map(post => (
+          <PostCard key={post.number} post={post}/>
+         ))}
         </PostListContainer>
       </>
     );

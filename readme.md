@@ -1,6 +1,8 @@
 # Projeto Ignite: Dt Money
 Desafio realizado durante o bootcamp "Ignite - ReactJS", promovido pela @rocketseat, onde pude desenvolver uma aplicação para complementar meus aprendizados sobre consumo de API e performance no ReactJS.
 
+<img src="https://i.ibb.co/F8KkzRh/cf28c68d-ad61-45aa-a918-ec028ea75bf6.png" alt="" border="0">
+
 ## Tecnologias utilizadas
 
 * Vite
@@ -11,20 +13,18 @@ Desafio realizado durante o bootcamp "Ignite - ReactJS", promovido pela @rockets
 * ESLint
 * React-syntax-highlighter
 
-🚀 Como iniciar a aplicação
-Para clonar esta aplicação e rodar em sua máquina, será necessário possuir Git.
+## 🚀 Como iniciar a aplicação
+
+Para clonar esta aplicação e rodar em sua máquina, será necessário possuir Git e NPM.
 
 Em seu terminal, digite:
 
-## Para Clonar
+```bash
+##Terminal
 $ git clone https://github.com/srsouzaj/github-blog
 
-
-Siga, a seguir, os seguintes passos
-
-```bash
 # Install the dependencies
-$ yarn
+$ npm
 
 ## Iniciar o projeto
-$ yarn dev
+$ npm run dev
